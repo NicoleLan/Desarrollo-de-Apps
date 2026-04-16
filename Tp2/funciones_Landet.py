@@ -32,24 +32,23 @@ def checkComponents():
         nombreComponente = str(input("Ingrese nombre del componente:")) 
         nivelEnergia = int(input("¿Qué nivel de energía tiene? (0-100)"))
         funciona = checkComponent(nombreComponente, nivelEnergia)
-        if (funciona) {
+        if (funciona) :
             operativo += 1
-        } else {
+        else:
             fallido += 1
-        }
+        
         cantComponentes -= 1
     return operativo, fallido
 
 
 def checkComponent(nombre, energia):
-    if nivelEnergia >= 70:
-        print ("OPERATIVO")
-        return true
+    if energia >= 70:
+        print (f"{nombre} OPERATIVO")
+        return True
 
     else:
-        print ("FALLIDO")
-        return false
+        print (f"{nombre} FALLIDO")
+        return False
 
 
     
-
