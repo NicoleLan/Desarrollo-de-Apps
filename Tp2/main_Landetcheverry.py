@@ -1,9 +1,7 @@
-from funciones_Landet import *
-
 nombre = greet()
 cargaBase, reserva = getData()
 
-checkFuel()
+checkFuel(reserva, cargaBase)
 
 operativo, fallido = checkComponents()
 
