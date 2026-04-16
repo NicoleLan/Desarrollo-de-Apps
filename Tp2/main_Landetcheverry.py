@@ -1,42 +1,11 @@
 from funciones_Landet import *
 
-print ("¡Hola!")
-nombre = str(input("Cuál es tu nombre, capitán?"))
+nombre = greet()
+cargaBase, reserva = getData()
 
-cargaBase = int(input("¿Cuánto es la carga base?"))
-reserva = int(input("¿Cuánto es la reserva?"))
+checkFuel()
 
-
-""" Cálculo de Combustible"""
-if reserva < 50:
-    reserva = 50 
-    print ("La reserva fue re-escrita a 50u por razsones de seguridad.")
-    resultado = suma (cargaBase, reserva)
-    
-else:
-    resultado = suma (cargaBase, reserva)
-
-print (resultado)
-
-
-"""Chequeo de Sistema: """
-cantComponentes = int(input("Cuántos componentes vas a checkear?"))
-operativo = 0
-fallido = 0
-
-while (cantComponentes > 0):
-    nombreComponente = str(input("Ingrese nombre del componente:")) 
-    nivelEnergia = int(input("Qué nivel de energía tiene? (0-100)"))
-
-    if nivelEnergia >= 70:
-        print ("OPERATIVO")
-        operativo += 1
-
-    else:
-        print ("FALLIDO")
-        fallido += 1
-    
-    cantComponentes -= 1
+operativo, fallido = checkComponents()
 
 """Cálculo de Estadísticas"""
 print (fallido, operativo)
